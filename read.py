@@ -1,7 +1,12 @@
 import numpy as np
 import pygame, sys
+import argparse
 
-data = np.load(sys.argv[1] + r'.npz') if len(sys.argv) >= 2 else np.load(r'Gravdata.npz')
+parser = argparse.ArgumentParser(description='Visualize simulated Planetary system. Use arguments: -f import filename')
+parser.add_argument('-f', '--file', type=str, metavar='', required=False, help='\033[93mThe filename for the .npz import\033[0m')
+args = parser.parse_args()
+
+data = np.load(args.file + r'.npz') if args.file is not None else np.load(r'Gravdata.npz')
 
 posxarr, posyarr = np.array(data['posxarr']), np.array(data['posyarr'])
 width, height = 1500, 1000
