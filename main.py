@@ -3,8 +3,8 @@ import pygame, math, sys
 from lib.Planet import Planet
 from lib.Simulate import simulate
 
-sigma = 1#int(sys.argv[1])
-totaltime = 10000#int(sys.argv[2])
+sigma = int(sys.argv[1])
+totaltime = int(sys.argv[2])
 
 #enter values here
 #(mass, acceleration-x-axis, acceleration-y-axis, position-x-axis, position-y-axis)
