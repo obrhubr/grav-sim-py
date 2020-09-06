@@ -1,7 +1,8 @@
 import numpy as np
-import pygame
+import pygame, sys
 
-data = np.load(r'Gravdata.npz')
+data = np.load(sys.argv[1] + r'.npz') if len(sys.argv) >= 2 else np.load(r'Gravdata.npz')
+
 posxarr, posyarr = np.array(data['posxarr']), np.array(data['posyarr'])
 width, height = 1500, 1000
 screen, keys_pressed = pygame.display.set_mode((width, height)), pygame.key.get_pressed()

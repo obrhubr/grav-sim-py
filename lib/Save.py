@@ -9,7 +9,7 @@ class Save():
         self.posxarr = np.append(self.posxarr, pointx)
         self.posyarr = np.append(self.posyarr, pointy)
 
-    def export(self, totaltime, numofplan):
+    def export(self, totaltime, numofplan, filename):
         self.posxarr = np.reshape(self.posxarr, (totaltime, numofplan))
         self.posyarr = np.reshape(self.posyarr, (totaltime, numofplan))
-        np.savez_compressed(r'Gravdata', posxarr=self.posxarr, posyarr=self.posyarr)
+        np.savez_compressed(filename, posxarr=self.posxarr, posyarr=self.posyarr)

@@ -1,5 +1,5 @@
 import lib.Save
-def simulate(sigma, totaltime, numofplan, planetlist):
+def simulate(sigma, totaltime, numofplan, planetlist, filename):
     save1 = lib.Save.Save()
     for i in range(totaltime):
         if i%1000 == 0:
@@ -13,5 +13,5 @@ def simulate(sigma, totaltime, numofplan, planetlist):
             planetlist[l].positionx += (planetlist[l].accelerationx * sigma)
             planetlist[l].positiony += (planetlist[l].accelerationy * sigma)
     
-    save1.export(totaltime, numofplan)
+    save1.export(totaltime, numofplan, filename)
     
