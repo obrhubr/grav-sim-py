@@ -1,8 +1,7 @@
 import numpy as np
-import pygame, math, sys
+import pygame, math, sys, argparse
 from lib.Planet import Planet
 from lib.Simulate import simulate
-import argparse
 
 parser = argparse.ArgumentParser(description='Simulate Gravity. Use arguments: -s sigma in seconds, -t totaltime in seconds, -f export filename')
 parser.add_argument('-s', '--sigma', type=float, metavar='', required=False, help='\033[93mThe time step for the simulation\033[0m')
